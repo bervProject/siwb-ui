@@ -35,34 +35,23 @@ export default class Extract extends Vue {
     form.append("file", this.file);
     axios
       .post("https://siwb.herokuapp.com/api/extract", form, {
-        responseType: "blob"
+        responseType: "arraybuffer"
       })
       .then(response => {
-        let fileName = response.headers["content-disposition"].split(
-          "filename="
-        )[1];
-        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-          // IE variant
-          window.navigator.msSaveOrOpenBlob(
-            new Blob([response.data], {
-              type: "text/plain"
-            }),
-            fileName
-          );
-        } else {
-          const url = window.URL.createObjectURL(
-            new Blob([response.data], {
-              type: "text/plain"
-            })
-          );
+        if (!window.navigator.msSaveOrOpenBlob) {
+          // BLOB NAVIGATOR
+          const url = window.URL.createObjectURL(new Blob([response.data]));
           const link = document.createElement("a");
           link.href = url;
-          link.setAttribute(
-            "download",
-            response.headers["content-disposition"].split("filename=")[1]
-          );
+          link.setAttribute("download", "download.txt");
           document.body.appendChild(link);
           link.click();
+        } else {
+          // BLOB FOR EXPLORER 11
+          const url = window.navigator.msSaveOrOpenBlob(
+            new Blob([response.data]),
+            "download.txt"
+          );
         }
       })
       .catch(err => {
