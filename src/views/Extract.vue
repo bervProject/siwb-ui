@@ -17,17 +17,60 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class Extract extends Vue {
-  file: object | null = null;
+  file: Blob | null = null;
   submit() {
     if (this.file == null) {
       console.log("Empty");
       return;
     }
-    console.log(this.file);
+    let form = new FormData();
+    const loadingComponent = this.$buefy.loading.open({
+      container: null
+    });
+    form.append("file", this.file);
+    axios
+      .post("https://siwb.herokuapp.com/api/extract", form, {
+        responseType: "blob"
+      })
+      .then(response => {
+        let fileName = response.headers["content-disposition"].split(
+          "filename="
+        )[1];
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+          // IE variant
+          window.navigator.msSaveOrOpenBlob(
+            new Blob([response.data], {
+              type: "text/plain"
+            }),
+            fileName
+          );
+        } else {
+          const url = window.URL.createObjectURL(
+            new Blob([response.data], {
+              type: "text/plain"
+            })
+          );
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute(
+            "download",
+            response.headers["content-disposition"].split("filename=")[1]
+          );
+          document.body.appendChild(link);
+          link.click();
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .finally(() => {
+        loadingComponent.close();
+      });
   }
 }
 </script>
