@@ -25,7 +25,7 @@ export default class Extract extends Vue {
   file: Blob | null = null;
   submit() {
     if (this.file == null) {
-      console.log("Empty");
+      alert("Empty");
       return;
     }
     let form = new FormData();
@@ -66,7 +66,7 @@ export default class Extract extends Vue {
         }
       })
       .catch(err => {
-        console.log(err);
+        alert(err);
       })
       .finally(() => {
         loadingComponent.close();
