@@ -28,7 +28,7 @@ export default class Extract extends Vue {
       alert("Empty");
       return;
     }
-    let form = new FormData();
+    const form = new FormData();
     const loadingComponent = this.$buefy.loading.open({
       container: null
     });
@@ -48,7 +48,7 @@ export default class Extract extends Vue {
           link.click();
         } else {
           // BLOB FOR EXPLORER 11
-          const url = window.navigator.msSaveOrOpenBlob(
+          window.navigator.msSaveOrOpenBlob(
             new Blob([response.data]),
             "download.txt"
           );
