@@ -7,14 +7,4 @@
   </div>
 </template>
 
-<style lang="scss">
-</style>
-
-<script lang="ts">
-import NavBar from "@/components/NavBar.vue";
-export default {
-  components: {
-    NavBar
-  }
-};
-</script>
+<script lang="ts" src="./app.ts" />

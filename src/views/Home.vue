@@ -13,7 +13,7 @@
       <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
         <section :class="`hero is-medium is-${carousel.color}`">
           <div class="hero-body has-text-centered">
-            <h1 class="title">{{carousel.title}}</h1>
+            <h1 class="title">{{ carousel.title }}</h1>
           </div>
         </section>
       </b-carousel-item>
@@ -22,30 +22,12 @@
       <h2 class="title">Choose your options</h2>
       <div class="buttons is-centered">
         <b-button tag="router-link" to="/embed" type="is-link">Embed</b-button>
-        <b-button tag="router-link" to="/extract" type="is-info">Extract</b-button>
+        <b-button tag="router-link" to="/extract" type="is-info"
+          >Extract</b-button
+        >
       </div>
     </section>
   </div>
 </template>
 
-<script>
-export default {
-  name: "home",
-  data() {
-    return {
-      arrow: true,
-      arrowBoth: false,
-      arrowHover: false,
-      iconPack: "mdi",
-      iconPrev: "arrow-left",
-      iconNext: "arrow-right",
-      iconSize: "",
-      carousels: [
-        { title: "Simple", color: "info" },
-        { title: "Image Watermarking", color: "success" },
-        { title: "Web Services", color: "warning" }
-      ]
-    };
-  }
-};
-</script>
+<script src="./home.js" />
