@@ -21,7 +21,9 @@
     <section class="section has-text-centered">
       <h2 class="title">Choose your options</h2>
       <div class="buttons is-centered">
-        <b-button tag="router-link" to="/embed" type="is-link">Embed</b-button>
+        <b-button tag="router-link" to="/embed" type="is-danger"
+          >Embed</b-button
+        >
         <b-button tag="router-link" to="/extract" type="is-info"
           >Extract</b-button
         >

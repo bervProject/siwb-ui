@@ -1,17 +1,25 @@
 <template>
   <div class="container has-text-centered">
-    <h1 class="title">Extract</h1>
     <section>
-      <b-field class="file">
-        <b-upload v-model="file">
-          <a class="button is-primary">
-            <b-icon icon="upload"></b-icon>
-            <span>Click to upload</span>
-          </a>
-        </b-upload>
-        <span class="file-name" v-if="file">{{ file.name }}</span>
-      </b-field>
-      <b-button type="is-info" expanded v-on:click="submit">Extract</b-button>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-header-title">Extract</h2>
+        </div>
+        <div class="card-content">
+          <b-field class="file">
+            <b-upload v-model="file" expanded>
+              <a class="button is-dark is-fullwidth">
+                <b-icon icon="upload"></b-icon>
+                <span>Click to upload</span>
+              </a>
+            </b-upload>
+            <span class="file-name" v-if="file">{{ file.name }}</span>
+          </b-field>
+          <b-button type="is-info" expanded v-on:click="submit"
+            >Extract</b-button
+          >
+        </div>
+      </div>
     </section>
   </div>
 </template>

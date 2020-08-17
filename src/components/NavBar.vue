@@ -1,5 +1,5 @@
 <template>
-  <b-navbar fixed-bottom type="is-dark" shadow>
+  <b-navbar fixed-top type="is-dark" wrapper-class="container" shadow>
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <p>SIWB</p>
@@ -12,9 +12,4 @@
   </b-navbar>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component
-export default class NavBar extends Vue {}
-</script>
+<script lang="ts" src="./navbar.ts"></script>
