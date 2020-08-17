@@ -8,20 +8,20 @@ export default class Extract extends Vue {
     if (this.file == null) {
       this.$buefy.notification.open({
         message: "Please Input a Valid File",
-        type: "is-danger"
+        type: "is-danger",
       });
       return;
     }
     const form = new FormData();
     const loadingComponent = this.$buefy.loading.open({
-      container: null
+      container: null,
     });
     form.append("file", this.file);
     axios
       .post("https://siwb.herokuapp.com/api/extract", form, {
-        responseType: "arraybuffer"
+        responseType: "arraybuffer",
       })
-      .then(response => {
+      .then((response) => {
         if (!window.navigator.msSaveOrOpenBlob) {
           // BLOB NAVIGATOR
           const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -38,11 +38,11 @@ export default class Extract extends Vue {
           );
         }
       })
-      .catch(err => {
+      .catch((err) => {
         this.$buefy.notification.open({
           message: err.message,
           type: "is-danger",
-          hasIcon: true
+          hasIcon: true,
         });
       })
       .finally(() => {

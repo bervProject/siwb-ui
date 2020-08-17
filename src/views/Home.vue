@@ -30,4 +30,4 @@
   </div>
 </template>
 
-<script src="./home.js" />
+<script lang="ts" src="./home.ts" />
