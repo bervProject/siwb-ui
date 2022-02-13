@@ -22,21 +22,13 @@ export default class Extract extends Vue {
         responseType: "arraybuffer",
       })
       .then((response) => {
-        if (!window.navigator.msSaveOrOpenBlob) {
-          // BLOB NAVIGATOR
-          const url = window.URL.createObjectURL(new Blob([response.data]));
-          const link = document.createElement("a");
-          link.href = url;
-          link.setAttribute("download", "download.txt");
-          document.body.appendChild(link);
-          link.click();
-        } else {
-          // BLOB FOR EXPLORER 11
-          window.navigator.msSaveOrOpenBlob(
-            new Blob([response.data]),
-            "download.txt"
-          );
-        }
+        // BLOB NAVIGATOR
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "download.txt");
+        document.body.appendChild(link);
+        link.click();
       })
       .catch((err) => {
         this.$buefy.notification.open({
