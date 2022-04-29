@@ -1985,7 +1985,7 @@
     webpack-virtual-modules "^0.4.2"
     whatwg-fetch "^3.6.2"
 
-"@vue/cli-shared-utils@^5.0.1", "@vue/cli-shared-utils@^5.0.4":
+"@vue/cli-shared-utils@^5.0.4":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-5.0.4.tgz#e3f42575cb6b70e021272ef2c8bb52ca544ecf27"
   integrity sha512-nfAsj8Nopu5sVHMBIaut/YL7NaJFVmTBSTJD7LM17jc5uytrM9JwiRtzCiv3JWRBG78Xdb/s2Xb/1YR4fkdmkQ==
@@ -2437,9 +2437,9 @@ astral-regex@^2.0.0:
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
 async@^2.6.2:
-  version "2.6.3"
-  resolved "https://registry.npmjs.org/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
-  integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
 
