@@ -41,7 +41,7 @@
     "jest": "^28.1.2",
     "prettier": "^2.7.1",
     "sass": "^1.52.3",
-    "sass-loader": "^13.0.0",
+    "sass-loader": "^13.0.2",
     "ts-jest": "^28.0.5",
     "typescript": "~4.7.3",
     "vue-template-compiler": "^2.6.14"
