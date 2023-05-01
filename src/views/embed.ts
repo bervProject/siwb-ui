@@ -1,5 +1,5 @@
-import axios from "axios";
 import { Component, Vue } from "vue-property-decorator";
+import client from "../services";
 
 @Component
 export default class Extract extends Vue {
@@ -19,8 +19,8 @@ export default class Extract extends Vue {
     });
     form.append("file", this.file);
     form.append("message", this.message);
-    axios
-      .post("https://siwb.herokuapp.com/api/embed", form, {
+    client
+      .post("/api/embed", form, {
         responseType: "arraybuffer",
       })
       .then((response) => {

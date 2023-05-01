@@ -1,5 +1,11 @@
 # siwb-ui
 
+## Env
+
+```
+VUE_APP_BACKEND=
+```
+
 ## Project setup
 ```
 yarn install
