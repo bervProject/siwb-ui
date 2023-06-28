@@ -1,4 +1,15 @@
-import { Component, Vue } from "vue-property-decorator";
+import { defineComponent } from "vue";
 
-@Component
-export default class NavBar extends Vue {}
+export default defineComponent({
+    data() {
+        return {
+            activator: false,
+        };
+    },
+    methods: {
+        makeBurger() {
+            this.activator = !this.activator;
+            return this.activator;
+        },
+    },
+});

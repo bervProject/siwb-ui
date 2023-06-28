@@ -1,19 +1,21 @@
-import { Component, Vue } from "vue-property-decorator";
+import { defineComponent } from "vue";
 
-@Component({
+export default defineComponent({
   name: "home",
-})
-export default class Home extends Vue {
-  protected arrow = true;
-  protected arrowBoth = false;
-  protected arrowHover = false;
-  protected iconPack = "mdi";
-  protected iconPrev = "arrow-left";
-  protected iconNext = "arrow-right";
-  protected iconSize = "";
-  protected carousels: Array<object> = [
-    { title: "Simple", color: "info" },
-    { title: "Image Watermarking", color: "success" },
-    { title: "Web Services", color: "warning" },
-  ];
-}
+  data() {
+    return {
+      arrow: true,
+      arrowBoth: false,
+      arrowHover: false,
+      iconPack: "mdi",
+      iconPrev: "arrow-left",
+      iconNext: "arrow-right",
+      iconSize: "",
+      carousels: [
+        { title: "Simple", color: "info" },
+        { title: "Image Watermarking", color: "success" },
+        { title: "Web Services", color: "warning" },
+      ],
+    };
+  },
+});

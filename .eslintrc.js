@@ -14,7 +14,7 @@ module.exports = {
     "vue/multi-word-component-names": "warn",
   },
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
   },
   overrides: [
     {
