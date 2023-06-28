@@ -6,19 +6,19 @@
           <h2 class="card-header-title">Embed</h2>
         </div>
         <div class="card-content">
-          <b-field class="file">
-            <b-upload v-model="file" expanded>
+          <o-field class="file">
+            <o-upload v-model="file" expanded>
               <a class="button is-dark is-fullwidth">
-                <b-icon icon="upload"></b-icon>
+                <o-icon icon="upload"></o-icon>
                 <span>Click to upload</span>
               </a>
-            </b-upload>
+            </o-upload>
             <span class="file-name" v-if="file">{{ file.name }}</span>
-          </b-field>
-          <b-field label="Message">
-            <b-input v-model="message"></b-input>
-          </b-field>
-          <b-button type="is-info" expanded v-on:click="submit">Embed</b-button>
+          </o-field>
+          <o-field label="Message">
+            <o-input v-model="message"></o-input>
+          </o-field>
+          <o-button variant="info" expanded v-on:click="submit">Embed</o-button>
         </div>
       </div>
     </section>

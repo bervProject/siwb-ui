@@ -1,44 +1,56 @@
-import { Component, Vue } from "vue-property-decorator";
+import { useProgrammatic } from "@oruga-ui/oruga-next";
 import client from "../services";
+import { defineComponent } from "vue";
 
-@Component
-export default class Extract extends Vue {
-  file: Blob | null = null;
-  submit() {
-    if (this.file == null) {
-      this.$buefy.notification.open({
-        message: "Please Input a Valid File",
-        type: "is-danger",
-      });
-      return;
-    }
-    const form = new FormData();
-    const loadingComponent = this.$buefy.loading.open({
-      container: null,
-    });
-    form.append("file", this.file);
-    client
-      .post("/api/extract", form, {
-        responseType: "arraybuffer",
-      })
-      .then((response) => {
-        // BLOB NAVIGATOR
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "download.txt");
-        document.body.appendChild(link);
-        link.click();
-      })
-      .catch((err) => {
-        this.$buefy.notification.open({
-          message: err.message,
-          type: "is-danger",
-          hasIcon: true,
+export default defineComponent({
+  setup() {
+    const oruga = useProgrammatic();
+    return { oruga };
+  },
+  data(): {
+    file: Blob | null;
+  } {
+    return {
+      file: null,
+    };
+  },
+  methods: {
+    submit() {
+      if (this.file == null) {
+        this.oruga.notification.open({
+          message: "Please Input a Valid File",
+          variant: "danger",
         });
-      })
-      .finally(() => {
-        loadingComponent.close();
+        return;
+      }
+      const form = new FormData();
+      const loadingComponent = this.oruga.loading.open({
+        container: null,
       });
-  }
-}
+      form.append("file", this.file);
+      client
+        .post("/api/extract", form, {
+          responseType: "arraybuffer",
+        })
+        .then((response) => {
+          // BLOB NAVIGATOR
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", "download.txt");
+          document.body.appendChild(link);
+          link.click();
+        })
+        .catch((err) => {
+          this.oruga.notification.open({
+            message: err.message,
+            variant: "danger",
+            hasIcon: true,
+          });
+        })
+        .finally(() => {
+          loadingComponent.close();
+        });
+    },
+  },
+});
