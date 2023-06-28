@@ -4,7 +4,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
-    const oruga = useProgrammatic();
+    const { oruga } = useProgrammatic();
     return { oruga };
   },
   data(): {
