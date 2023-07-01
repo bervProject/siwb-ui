@@ -43,6 +43,6 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.3.2",
     "ts-jest": "^29.1.1",
-    "typescript": "~5.0.4"
+    "typescript": "~5.1.6"
   }
 }
