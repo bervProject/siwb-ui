@@ -10,7 +10,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@oruga-ui/oruga-next": "0.8.2",
+    "@oruga-ui/oruga-next": "0.8.5",
     "@oruga-ui/theme-bulma": "^0.2.11",
     "axios": "^1.6.7",
     "core-js": "^3.36.0",
