@@ -15,7 +15,7 @@
     "axios": "^1.6.8",
     "core-js": "^3.36.1",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
