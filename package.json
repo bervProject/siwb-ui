@@ -43,7 +43,7 @@
     "sass": "^1.77.6",
     "sass-loader": "^16.0.0",
     "ts-jest": "^29.2.3",
-    "typescript": "~5.5.2"
+    "typescript": "~5.5.4"
   },
   "packageManager": "yarn@1.22.19"
 }
