@@ -13,7 +13,7 @@
     "@oruga-ui/oruga-next": "0.8.12",
     "@oruga-ui/theme-bulma": "^0.3.0",
     "axios": "^1.7.4",
-    "core-js": "^3.37.1",
+    "core-js": "^3.38.1",
     "vue": "^3.4.35",
     "vue-router": "^4.4.2"
   },
