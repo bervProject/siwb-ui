@@ -42,7 +42,7 @@
     "prettier": "^3.5.3",
     "sass": "^1.86.1",
     "sass-loader": "^16.0.5",
-    "ts-jest": "^29.3.1",
+    "ts-jest": "^29.3.2",
     "typescript": "~5.8.2"
   },
   "packageManager": "yarn@1.22.19"
