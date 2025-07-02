@@ -13,12 +13,12 @@
                 <span>Click to upload</span>
               </a>
             </o-upload>
-            <span class="file-name" v-if="file">{{ file.name }}</span>
+            <span v-if="file" class="file-name">{{ file.name }}</span>
           </o-field>
           <o-field label="Message">
             <o-input v-model="message"></o-input>
           </o-field>
-          <o-button variant="info" expanded v-on:click="submit">Embed</o-button>
+          <o-button variant="info" expanded @click="submit">Embed</o-button>
         </div>
       </div>
     </section>

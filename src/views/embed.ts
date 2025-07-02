@@ -1,10 +1,10 @@
 import { defineComponent } from "vue";
-import { useProgrammatic } from "@oruga-ui/oruga-next";
+import { useOruga } from "@oruga-ui/oruga-next";
 import client from "../services";
 
 export default defineComponent({
   setup() {
-    const { oruga } = useProgrammatic();
+    const { oruga } = useOruga();
     return { oruga };
   },
   data(): {

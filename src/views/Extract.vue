@@ -13,9 +13,9 @@
                 <span>Click to upload</span>
               </a>
             </o-upload>
-            <span class="file-name" v-if="file">{{ file.name }}</span>
+            <span v-if="file" class="file-name">{{ file.name }}</span>
           </o-field>
-          <o-button variant="info" expanded v-on:click="submit"
+          <o-button variant="info" expanded @click="submit"
             >Extract</o-button
           >
         </div>

@@ -4,13 +4,13 @@
       <router-link class="navbar-item" to="/"> SIWB </router-link>
 
       <button
-        @click="makeBurger"
         type="button"
         class="button navbar-burger"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
-        v-bind:class="{ 'is-active': activator }"
+        :class="{ 'is-active': activator }"
+        @click="makeBurger"
       >
         <span aria-hidden="true" />
         <span aria-hidden="true" />
@@ -20,7 +20,7 @@
     <div
       id="navbarBasicExample"
       class="navbar-menu"
-      v-bind:class="{ 'is-active': activator }"
+      :class="{ 'is-active': activator }"
     >
       <div class="navbar-end">
         <router-link class="navbar-item" to="/embed">Embed</router-link>
