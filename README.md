@@ -3,7 +3,7 @@
 ## Env
 
 ```
-VUE_APP_BACKEND=
+VITE_BACKEND=
 ```
 
 ## Project setup

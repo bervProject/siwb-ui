@@ -1,12 +1,17 @@
 import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import NavBar from "@/components/NavBar.vue";
+import { createRouter, createMemoryHistory } from "vue-router";
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+const router = createRouter({
+  history: createMemoryHistory(),
+  routes: [{ path: "/", component: { template: "<div />" } }],
+});
+
+describe("NavBar.vue", () => {
+  it("renders navbar", async () => {
+    const wrapper = shallowMount(NavBar, {
+      global: { plugins: [router] },
     });
-    expect(wrapper.text()).toMatch(msg);
+    expect(wrapper.find("nav.navbar").exists()).toBe(true);
   });
 });
