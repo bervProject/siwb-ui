@@ -13,4 +13,13 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
   },
+  css: {
+    transformer: 'lightningcss',
+    lightningcss: {
+      errorRecovery: true,
+    },
+  },
+  build: {
+    cssMinify: 'lightningcss',
+  },
 });
