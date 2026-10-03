@@ -35,7 +35,7 @@
     "start-server-and-test": "^3.0.12",
     "typescript": "~6.0.3",
     "vite": "^8.3.1",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.2"
   },
   "packageManager": "yarn@1.22.19"
 }
