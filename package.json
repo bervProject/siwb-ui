@@ -31,7 +31,7 @@
     "eslint-plugin-vue": "^10.12.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.9.10",
-    "sass": "^1.105.0",
+    "sass": "^1.107.0",
     "start-server-and-test": "^3.0.13",
     "typescript": "~6.0.3",
     "vite": "^8.3.5",
